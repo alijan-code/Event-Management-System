@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Eventify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background: #f8fafc;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Navigation -->
+      <nav class="flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur shadow-md sticky top-0 z-30">
+        <a href="/" class="text-2xl font-bold text-blue-600 tracking-tight">Eventify</a>
+        <div class="flex gap-6">
+          <a href="/" class="font-medium text-gray-700 hover:text-blue-500 transition-colors">Home</a>
+          <a href="/about" class="font-medium text-blue-600">About</a>
+          <a href="/services" class="font-medium text-gray-700 hover:text-blue-500 transition-colors">Services</a>
+          <a href="/contact" class="font-medium text-gray-700 hover:text-blue-500 transition-colors">Contact</a>
+          <a href="/admin/login" class="ml-4 px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold shadow hover:bg-blue-700 transition">Admin</a>
+        </div>
+      </nav>
+
+      <!-- About Section -->
+      <section class="max-w-5xl mx-auto py-16 px-6">
+        <h2 class="text-4xl font-bold text-blue-700 mb-8">About Us</h2>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Our Story</h3>
+            <p class="text-lg text-gray-700 mb-4">
+              Eventify was founded in 2020 with a vision to transform how events are managed and experienced. What started as a small team of passionate event enthusiasts has grown into a comprehensive event management platform.
+            </p>
+            <p class="text-lg text-gray-700">
+              Our mission is to make every event seamless, creative, and memorable by blending technology with human creativity and attention to detail.
+            </p>
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-xl">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" 
+                 alt="Team collaboration" class="w-full h-full object-cover">
+          </div>
+        </div>
+        
+        <div class="mb-16">
+          <h3 class="text-2xl font-semibold text-blue-600 mb-4">Our Values</h3>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-xl shadow-md">
+              <div class="text-3xl mb-3">✨</div>
+              <h4 class="text-xl font-medium text-blue-700 mb-2">Excellence</h4>
+              <p class="text-gray-700">We strive for excellence in every detail, ensuring each event exceeds expectations.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md">
+              <div class="text-3xl mb-3">🤝</div>
+              <h4 class="text-xl font-medium text-blue-700 mb-2">Collaboration</h4>
+              <p class="text-gray-700">We believe in working closely with our clients to bring their vision to life.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md">
+              <div class="text-3xl mb-3">💡</div>
+              <h4 class="text-xl font-medium text-blue-700 mb-2">Innovation</h4>
+              <p class="text-gray-700">We continuously innovate to create unique and unforgettable event experiences.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-2xl font-semibold text-blue-600 mb-4">Our Team</h3>
+          <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-white rounded-xl overflow-hidden shadow-md">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team member" class="w-full h-48 object-cover">
+              <div class="p-4">
+                <h4 class="font-medium text-blue-700">Michael Johnson</h4>
+                <p class="text-gray-600 text-sm">Founder & CEO</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl overflow-hidden shadow-md">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team member" class="w-full h-48 object-cover">
+              <div class="p-4">
+                <h4 class="font-medium text-blue-700">Sarah Williams</h4>
+                <p class="text-gray-600 text-sm">Creative Director</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl overflow-hidden shadow-md">
+              <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Team member" class="w-full h-48 object-cover">
+              <div class="p-4">
+                <h4 class="font-medium text-blue-700">David Chen</h4>
+                <p class="text-gray-600 text-sm">Technical Lead</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl overflow-hidden shadow-md">
+              <img src="https://randomuser.me/api/portraits/women/29.jpg" alt="Team member" class="w-full h-48 object-cover">
+              <div class="p-4">
+                <h4 class="font-medium text-blue-700">Emily Rodriguez</h4>
+                <p class="text-gray-600 text-sm">Event Manager</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

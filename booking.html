@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book an Event - Eventify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background: #f8fafc;
+      }
+      .booking-input:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Navigation -->
+      <nav class="flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur shadow-md sticky top-0 z-30">
+        <a href="/" class="text-2xl font-bold text-blue-600 tracking-tight">Eventify</a>
+        <div class="flex gap-6">
+          <a href="/" class="font-medium text-gray-700 hover:text-blue-500 transition-colors">Home</a>
+          <a href="/about.html" class="font-medium text-gray-700 hover:text-blue-500 transition-colors">About</a>
+          <a href="/services.html" class="font-medium text-gray-700 hover:text-blue-500 transition-colors">Services</a>
+          <a href="/contact.html" class="font-medium text-gray-700 hover:text-blue-500 transition-colors">Contact</a>
+          <a href="/admin-login.html" class="ml-4 px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold shadow hover:bg-blue-700 transition">Admin</a>
+        </div>
+      </nav>
+
+      <!-- Booking Section -->
+      <section class="max-w-4xl mx-auto py-16 px-6">
+        <h2 class="text-4xl font-bold text-blue-700 mb-4 text-center">Book Your Event</h2>
+        <p class="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+          Fill out the form below to request your event booking. Our team will review your request and get back to you within 24 hours.
+        </p>
+        
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <form id="bookingForm" class="space-y-6">
+            <!-- Personal Information -->
+            <div>
+              <h3 class="text-xl font-semibold text-blue-700 mb-4">Personal Information</h3>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+                  <input type="text" id="name" class="w-full border border-gray-300 rounded-lg p-3 booking-input transition" required>
+                </div>
+                <div>
+                  <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                  <input type="email" id="email" class="w-full border border-gray-300 rounded-lg p-3 booking-input transition" required>
+                </div>
+                <div>
+                  <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+                  <input type="tel" id="phone" class="w-full border border-gray-300 rounded-lg p-3 booking-input transition" required>
+                </div>
+                <div>
+                  <label for="company" class="block text-gray-700 mb-2">Company/Organization (Optional)</label>
+                  <input type="text" id="company" class="w-full border border-gray-300 rounded-lg p-3 booking-input transition">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Event Details -->
+            <div>
+              <h3 class="text-xl font-semibold text-blue-700 mb-4">Event Details</h3>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label for="eventType" class="block text-gray-700 mb-2">Event Type</label>
+                  <select id="eventType" class="w-full border border-gray-300 rounded-lg p-3 booking-input transition" required>
+                    <option value="">Select Event Type</option>
+                    <option value="Wedding">Wedding</option>
+                    <option value="Concert">Concert</option>
+                    <option value="Conference">Conference</option>
+                    <option value="Corporate">Corporate Event</option>
+                    <option value="Social">Social Gathering</option>
+                    <option value="Virtual">Virtual Event</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="attendees" class="block text-gray-700 mb-2">Expected Number of Attendees</label>
+                  <input type="number" id="attendees" min="1" class="w-full border border-gray-300 rounded-lg p-3 booking-input transition" required>
+                </div>
+                <div>
+                  <label for="date" class="block text-gray-700 mb-2">Event Date</label>
+                  <input type="date" id="date" class="w-full border border-gray-300 rounded-lg p-3 booking-input transition" required>
+                </div>
+                <div>
+                  <label for="time" class="block text-gray-700 mb-2">Event Time</label>
+                  <input type="time" id="time" class="w-full border border-gray-300 rounded-lg p-3 booking-input transition" required>
+                </div>
+                <div class="md:col-span-2">
+                  <label for="location" class="block text-gray-700 mb-2">Event Location (if known)</label>
+                  <input type="text" id="location" class="w-full border border-gray-300 rounded-lg p-3 booking-input transition">
+                </div>
+                <div class="md:col-span-2">
+                  <label for="details" class="block text-gray-700 mb-2">Event Details</label>
+                  <textarea id="details" rows="4" class="w-full border border-gray-300 rounded-lg p-3 booking-input transition" placeholder="Please describe your event, including any special requirements or services you need." required></textarea>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Budget -->
+            <div>
+              <h3 class="text-xl font-semibold text-blue-700 mb-4">Budget</h3>
+              <div>
+                <label for="budget" class="block text-gray-700 mb-2">Estimated Budget Range</label>
+                <select id="budget" class="w-full border border-gray-300 rounded-lg p-3 booking-input transition" required>
+                  <option value="">Select Budget Range</option>
+                  <option value="Under $5,000">Under $5,000</option>
+                  <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                  <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                  <option value="$25,000 - $50,000">$25,000 - $50,000</option>
+                  <option value="$50,000+">$50,000+</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="pt-4">
+              <button type="submit" id="submitBtn" class="w-full bg-blue-600 text-white py-4 rounded-xl font-semibold hover:bg-blue-700 transition text-lg">
+                Submit Booking Request
+              </button>
+            </div>
+          </form>
+          
+          <!-- Success Message (hidden by default) -->
+          <div id="successMessage" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg mt-6">
+            <div class="flex items-center">
+              <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="font-medium">Your booking request has been submitted successfully! We'll get back to you within 24 hours.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      document.getElementById('bookingForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Disable submit button to prevent multiple submissions
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+        
+        // Collect form data
+        const formData = {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          phone: document.getElementById('phone').value,
+          company: document.getElementById('company').value,
+          eventType: document.getElementById('eventType').value,
+          attendees: document.getElementById('attendees').value,
+          date: document.getElementById('date').value,
+          time: document.getElementById('time').value,
+          location: document.getElementById('location').value,
+          details: document.getElementById('details').value,
+          budget: document.getElementById('budget').value
+        };
+        
+        // Send data to the server
+        fetch('/api/bookings', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('Booking submitted successfully:', data);
+          
+          // Show success message
+          document.getElementById('bookingForm').classList.add('hidden');
+          document.getElementById('successMessage').classList.remove('hidden');
+          
+          // Scroll to the success message
+          document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+        })
+        .catch(error => {
+          console.error('Error submitting booking:', error);
+          alert('There was an error submitting your booking. Please try again.');
+          
+          // Re-enable submit button
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit Booking Request';
+        });
+      });
+    </script>
+  </body>
+</html>

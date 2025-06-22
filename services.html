@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services - Eventify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background: #f8fafc;
+      }
+      .service-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Navigation -->
+      <nav class="flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur shadow-md sticky top-0 z-30">
+        <a href="/" class="text-2xl font-bold text-blue-600 tracking-tight">Eventify</a>
+        <div class="flex gap-6">
+          <a href="/" class="font-medium text-gray-700 hover:text-blue-500 transition-colors">Home</a>
+          <a href="/about" class="font-medium text-gray-700 hover:text-blue-500 transition-colors">About</a>
+          <a href="/services" class="font-medium text-blue-600">Services</a>
+          <a href="/contact" class="font-medium text-gray-700 hover:text-blue-500 transition-colors">Contact</a>
+          <a href="/admin/login" class="ml-4 px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold shadow hover:bg-blue-700 transition">Admin</a>
+        </div>
+      </nav>
+
+      <!-- Services Section -->
+      <section class="max-w-6xl mx-auto py-16 px-6">
+        <h2 class="text-4xl font-bold text-blue-700 mb-4 text-center">Our Services</h2>
+        <p class="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+          We offer comprehensive event management solutions tailored to your specific needs.
+          From planning to execution, we handle every detail with precision and creativity.
+        </p>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <!-- Wedding Service -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden service-card">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                 alt="Wedding" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <div class="text-3xl mb-2">💍</div>
+              <h3 class="text-xl font-semibold text-blue-700 mb-2">Weddings</h3>
+              <p class="text-gray-600 mb-4">
+                Create the wedding of your dreams with our comprehensive planning and management services.
+                From venue selection to day-of coordination, we ensure every detail is perfect.
+              </p>
+              <a href="#" class="text-blue-600 font-medium hover:underline">Learn more →</a>
+            </div>
+          </div>
+          
+          <!-- Concert Service -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden service-card">
+            <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                 alt="Concert" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <div class="text-3xl mb-2">🎤</div>
+              <h3 class="text-xl font-semibold text-blue-700 mb-2">Concerts & Performances</h3>
+              <p class="text-gray-600 mb-4">
+                From intimate shows to large-scale concerts, we handle sound, lighting, stage design, 
+                ticketing, and crowd management for a flawless performance experience.
+              </p>
+              <a href="#" class="text-blue-600 font-medium hover:underline">Learn more →</a>
+            </div>
+          </div>
+          
+          <!-- Conference Service -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden service-card">
+            <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1112&q=80" 
+                 alt="Conference" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <div class="text-3xl mb-2">🎓</div>
+              <h3 class="text-xl font-semibold text-blue-700 mb-2">Conferences</h3>
+              <p class="text-gray-600 mb-4">
+                Professional conference organization with seamless logistics, including venue setup,
+                speaker coordination, technical support, and attendee management.
+              </p>
+              <a href="#" class="text-blue-600 font-medium hover:underline">Learn more →</a>
+            </div>
+          </div>
+          
+          <!-- Corporate Events -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden service-card">
+            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" 
+                 alt="Corporate Event" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <div class="text-3xl mb-2">🏢</div>
+              <h3 class="text-xl font-semibold text-blue-700 mb-2">Corporate Events</h3>
+              <p class="text-gray-600 mb-4">
+                Elevate your company gatherings with our corporate event planning services.
+                Product launches, team building, galas, and more, all executed flawlessly.
+              </p>
+              <a href="#" class="text-blue-600 font-medium hover:underline">Learn more →</a>
+            </div>
+          </div>
+          
+          <!-- Social Gatherings -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden service-card">
+            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                 alt="Social Gathering" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <div class="text-3xl mb-2">🎉</div>
+              <h3 class="text-xl font-semibold text-blue-700 mb-2">Social Gatherings</h3>
+              <p class="text-gray-600 mb-4">
+                Make your birthday parties, anniversaries, and special celebrations memorable
+                with our personalized event planning and coordination services.
+              </p>
+              <a href="#" class="text-blue-600 font-medium hover:underline">Learn more →</a>
+            </div>
+          </div>
+          
+          <!-- Virtual Events -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden service-card">
+            <img src="https://images.unsplash.com/photo-1609234656432-603fd648adf8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                 alt="Virtual Event" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <div class="text-3xl mb-2">💻</div>
+              <h3 class="text-xl font-semibold text-blue-700 mb-2">Virtual Events</h3>
+              <p class="text-gray-600 mb-4">
+                Engage audiences worldwide with our virtual event solutions. We handle
+                streaming, platform setup, interactive elements, and technical support.
+              </p>
+              <a href="#" class="text-blue-600 font-medium hover:underline">Learn more →</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="bg-blue-600 rounded-2xl p-8 text-center text-white">
+          <h3 class="text-2xl font-bold mb-4">Ready to plan your next event?</h3>
+          <p class="text-lg mb-6 max-w-2xl mx-auto">
+            Contact us today to discuss your event needs and let our team of experts create an unforgettable experience.
+          </p>
+          <a href="/booking" class="inline-block px-8 py-3 bg-white text-blue-600 rounded-xl shadow hover:bg-blue-50 transition text-lg font-semibold">
+            Book Now
+          </a>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

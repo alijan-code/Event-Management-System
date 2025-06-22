@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+  <div class="max-w-md mx-auto bg-white p-8 rounded shadow-md">
+    <h1 class="text-2xl font-bold mb-4">Test Admin Login</h1>
+    
+    <div id="login-form" class="mb-8">
+      <div class="mb-4">
+        <label class="block text-gray-700 mb-2">Username</label>
+        <input type="text" id="username" value="admin" class="w-full p-2 border rounded">
+      </div>
+      
+      <div class="mb-4">
+        <label class="block text-gray-700 mb-2">Password</label>
+        <input type="password" id="password" value="password" class="w-full p-2 border rounded">
+      </div>
+      
+      <button id="login-btn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+        Login
+      </button>
+    </div>
+    
+    <div id="result" class="p-4 border rounded hidden"></div>
+  </div>
+  
+  <script>
+    document.getElementById('login-btn').addEventListener('click', async function() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const resultDiv = document.getElementById('result');
+      
+      try {
+        resultDiv.innerHTML = 'Sending login request...';
+        resultDiv.className = 'p-4 border rounded bg-yellow-100';
+        resultDiv.classList.remove('hidden');
+        
+        const response = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, password })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          resultDiv.innerHTML = `
+            <p class="font-bold">Login successful!</p>
+            <p>Token: ${data.token}</p>
+            <p>User: ${JSON.stringify(data.user)}</p>
+            <div class="mt-4">
+              <button id="store-btn" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mr-2">
+                Store & Redirect
+              </button>
+              <button id="clear-btn" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+                Clear Storage
+              </button>
+            </div>
+          `;
+          resultDiv.className = 'p-4 border rounded bg-green-100';
+          
+          // Add event listeners to the new buttons
+          document.getElementById('store-btn').addEventListener('click', function() {
+            localStorage.setItem('admin_token', data.token);
+            localStorage.setItem('admin_user', JSON.stringify(data.user));
+            window.location.href = '/admin-dashboard.html';
+          });
+          
+          document.getElementById('clear-btn').addEventListener('click', function() {
+            localStorage.removeItem('admin_token');
+            localStorage.removeItem('admin_user');
+            alert('Local storage cleared');
+          });
+        } else {
+          resultDiv.innerHTML = `<p class="font-bold">Login failed:</p><p>${data.error || 'Unknown error'}</p>`;
+          resultDiv.className = 'p-4 border rounded bg-red-100';
+        }
+      } catch (error) {
+        resultDiv.innerHTML = `<p class="font-bold">Error:</p><p>${error.message}</p>`;
+        resultDiv.className = 'p-4 border rounded bg-red-100';
+      }
+    });
+  </script>
+</body>
+</html>
